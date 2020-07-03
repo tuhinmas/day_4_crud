@@ -6,13 +6,14 @@ namespace App\Models  ;
 use Illuminate\Support\Facades\DB;
 class JawabanModel { 
     //
-    public static function get_all(){
-        $pertanyaan = DB::table('answers') ->get();
-        return $pertanyaan;
+    public static function get_all($pertanyaan_id){
+        $jawaban = DB::table('answers')->where('q_id',$pertanyaan_id) ->get();
+        return $jawaban;
     }
 
     public static function save($data){
-        $new_question = DB::table('answers') -> insert($data);
-        return $new_question;
+        $new_answer = DB::table('answers') -> insert($data);
+        return $new_answer;
     }
+ 
 }

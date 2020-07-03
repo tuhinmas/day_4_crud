@@ -20,10 +20,13 @@
         <td>{{$question -> isi}}</td>
         <td>{{$question -> created_at }}</td>
         <td>{{$question -> updated_at}}</td>
-        <td><button type="button" class="btn btn-primary btn-sm" onClick ="window.location.href='/jawaban'">Jawab!</button></td>
+        <td><a href="/jawaban/{{$question->id}}" type="button" class="btn btn-primary btn-sm">Jawab!</button></td>
       </tr>
     @endforeach
     </tbody>
   </table>
+  <div class="text-center">
+    <a href="/pertanyaan/create" class="btn btn-danger btn-lg mt-3">Make Question</a>
+  </div>
 
 @endsection

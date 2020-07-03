@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PertanyaanModel;
+use App\Models\JawabanModel;
 class QuestionsController extends Controller
 {
     //
@@ -26,6 +27,13 @@ class QuestionsController extends Controller
         if($question){
             return redirect('/pertanyaan');
         }
+    }
+    public function show($pertanyaan_id){
+        $question = PertanyaanModel::show_question($pertanyaan_id);
+        $jawaban = JawabanModel::get_all($pertanyaan_id);
+            return view('answers.index', compact('question','jawaban'));
+
+        // dd($answer);
     }
     
 }

@@ -30,4 +30,10 @@ class PertanyaanModel {
                             'updated_at' => $tanggal
                         ]);
     }
+    public static function destroy($pertanyaan_id){
+        $delete = DB::table('questions')
+                        ->where('id',$pertanyaan_id)
+                        ->delete();
+        return $delete;
+    }
 }

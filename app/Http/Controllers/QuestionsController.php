@@ -21,6 +21,7 @@ class QuestionsController extends Controller
     // dd($request->all());
         $data = $request->all();
         unset($data["_token"]);
+        date_default_timezone_set("Asia/Jakarta");
         $current_date_time = date('Y-m-d H:i:s');
         $data = array_merge($data, ["created_at" =>$current_date_time,"updated_at" =>$current_date_time]);
         $question = PertanyaanModel::save($data);
@@ -41,6 +42,10 @@ class QuestionsController extends Controller
     }
     public function update($pertanyaan_id, Request $request){
         $question = PertanyaanModel::update($pertanyaan_id, $request -> all());
+        return redirect('/pertanyaan');
+    }
+    public function destroy($pertanyaan_id){
+        $delete = PertanyaanModel::destroy($pertanyaan_id);
         return redirect('/pertanyaan');
     }
     

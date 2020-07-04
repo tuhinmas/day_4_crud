@@ -9,7 +9,6 @@
         <th>Pertanyaan</th>
         <th>Dibuat</th>
         <th>Diupdate</th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -20,8 +19,16 @@
         <td>{{$question -> isi}}</td>
         <td>{{$question -> created_at }}</td>
         <td>{{$question -> updated_at}}</td>
-        <td><a href="/jawaban/{{$question->id}}" type="button" class="btn btn-primary">Detail</button></td>
-        <td><a href="/pertanyaan/{{$question->id}}/edit" type="button" class="btn btn-info">Edit</button></td>
+        <td><a href="/jawaban/{{$question->id}}" type="button" class="btn btn-primary">Detail</a>
+        <td style="widt: 1px;"><a href="/pertanyaan/{{$question->id}}/edit" type="button" class="btn btn-info">Edit</a>
+        <td style="widt: 1px;"><form action='/pertanyaan/{{$question->id}}' method="post" style="display: inline-block;">
+                @csrf
+                @method('DELETE')
+                  <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-trash"></i>
+                  </button>
+            </form>
+        </td>
       </tr>
     @endforeach
     </tbody>

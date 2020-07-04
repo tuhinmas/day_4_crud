@@ -21,3 +21,4 @@ Route::post('/jawaban/{pertanyaan_id}','AnswersController@store');
 
 Route::get('/pertanyaan/{pertanyaan_id}/edit','QuestionsController@edit');
 Route::put('/pertanyaan/{pertanyaan_id}','QuestionsController@update');
+Route::delete('/pertanyaan/{pertanyaan_id}','QuestionsController@destroy');

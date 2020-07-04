@@ -35,5 +35,13 @@ class QuestionsController extends Controller
 
         // dd($answer);
     }
+    public function edit($pertanyaan_id){
+        $question = PertanyaanModel::show_question($pertanyaan_id);
+        return view('questions.edit', compact('question'));
+    }
+    public function update($pertanyaan_id, Request $request){
+        $question = PertanyaanModel::update($pertanyaan_id, $request -> all());
+        return redirect('/pertanyaan');
+    }
     
 }

@@ -20,7 +20,8 @@
         <td>{{$question -> isi}}</td>
         <td>{{$question -> created_at }}</td>
         <td>{{$question -> updated_at}}</td>
-        <td><a href="/jawaban/{{$question->id}}" type="button" class="btn btn-primary btn-sm">Jawab!</button></td>
+        <td><a href="/jawaban/{{$question->id}}" type="button" class="btn btn-primary">Detail</button></td>
+        <td><a href="/pertanyaan/{{$question->id}}/edit" type="button" class="btn btn-info">Edit</button></td>
       </tr>
     @endforeach
     </tbody>

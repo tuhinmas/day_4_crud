@@ -20,6 +20,5 @@ class AnswersController extends Controller
                                     ['pertanyaan_id' => $pertanyaan_id]
                                 );
         }
-        dd($data);
     }
 }

@@ -14,7 +14,7 @@
             <textarea name="isi" class="form-control" rows="5" id="comment"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a href="/pertanyaan" class="btn btn-danger">Back</a>
+        <a href="/pertanyaan" class="btn btn-danger ml-2">Back</a>
         </form>
     </div>
 </div>

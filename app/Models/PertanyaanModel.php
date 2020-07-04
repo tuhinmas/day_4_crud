@@ -19,4 +19,15 @@ class PertanyaanModel {
         $question = DB::table('questions') -> where('id',$pertanyaan_id) ->first();
         return $question;
     }
+    public static function update($pertanyaan_id, $request){
+        date_default_timezone_set("Asia/Jakarta");
+        $tanggal = date('Y-m-d H:i:s');
+        $question = DB::table('questions') 
+                        -> where('id', $pertanyaan_id)
+                        -> update([
+                            'judul' => $request['judul'],
+                            'isi' => $request['isi'],
+                            'updated_at' => $tanggal
+                        ]);
+    }
 }

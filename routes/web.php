@@ -18,3 +18,6 @@ Route::get('/pertanyaan/create','QuestionsController@create');
 Route::post('/pertanyaan','QuestionsController@store');
 Route::get('/jawaban/{pertanyaan_id}','QuestionsController@show');
 Route::post('/jawaban/{pertanyaan_id}','AnswersController@store');
+
+Route::get('/pertanyaan/{pertanyaan_id}/edit','QuestionsController@edit');
+Route::put('/pertanyaan/{pertanyaan_id}','QuestionsController@update');
